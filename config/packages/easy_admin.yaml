@@ -1,0 +1,12 @@
+easy_admin:
+    entities:
+      user:
+        class: App\Entity\User
+      Carsad:
+        class: App\Entity\Carsad
+      Image:
+        class: App\Entity\Image
+        list:
+          fields:
+            - id
+            - {property: 'nameimage', type: 'image', label: 'image', base_path: '%images_path%' }

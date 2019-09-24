@@ -1,0 +1,154 @@
+{% extends 'base.html.twig' %}
+{% block title %}SympTest Test
+{% endblock %}
+
+{% block body %}
+{% if ads %}
+        <div class="container">
+        <table class="px-0 py-0 table table-responsive" id="id" style='text-align:center;'>
+        <div class="container">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Article Title</th>
+                    <th>Article description</th>
+                    <th>Article Category</th>
+                    <th>Article status</th>
+                    <th>Article year</th>
+                    <th>Article manufacturer</th>
+                    <th>Article model</th>
+                    <th>Article category</th>
+                    <th>Article engine</th>
+                    <th>Article kilometres</th>
+                    <th>Article cylender</th>
+                    <th>Article transmission</th>
+                    <th>Article drivertrain</th>
+                    <th>Article outcolour</th>
+                    <th>Article incolour</th>
+                    <th>Article passengers</th>
+                    <th>Article doors</th>
+                    <th>Article fueltype</th>
+                    <th>Article fueltank</th>
+                    <th>Article price</th>
+                    <th>Article oldprice</th>
+                    <th>Article features</th>
+                    <th>Article otherparams</th>
+                    <th>Article Category</th>
+                    <th>Article safety</th>
+                    <th>Article comfort</th>
+                    <th>Article date</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>{{ ads.title }}</td>
+                        <td>{{ ads.description }}</td>
+                        <td>{{ ads.category }}</td>
+                        <td>{{ ads.description }}</td>
+                        <td>{{ ads.status }}</td>
+                        <td>{{ ads.year }}</td>
+                        <td>{{ ads.manufacturer  }}</td>
+                        <td>{{ ads.engine }}</td>
+                        <td>{{ ads.kilometres  }}</td>
+                        <td>{{ ads.cylender }}</td>
+                        <td>{{ ads.transmission }}</td>
+                        <td>{{ ads.drivertrain  }}</td>
+                        <td>{{ ads.outcolour }}</td>
+                        <td>{{ ads.incolour }}</td>
+                        <td>{{ ads.passengers  }}</td>
+                        <td>{{ ads.doors }}</td>
+                        <td>{{ ads.fueltype }}</td>
+                        <td>{{ ads.fueltank  }}</td>
+                        <td>{{ ads.price }}</td>
+                        <td>{{ ads.oldprice }}</td>
+                        <td>{{ ads.manufacturer  }}</td>
+                        <td>{{ ads.title }}</td>
+                        <td>{{ ads.features  }}</td>
+                        <td>{{ ads.otherparams }}</td>
+                        <td>{{ ads.safety }}</td>
+                        <td>{{ ads.comfort  }}</td>
+                        <td>{{ ads.createdAt | date("d/m/y") }}</td>
+                        {% for images in ads.images %}
+                        {% for image in images.nameimage %}
+                        <td><img src="{{ '/uploads/' ~ image.nameimage}}" alt=""
+                        style="max-width: 100%;max-height: 100%;display: block;"></td>
+
+                        {% endfor %}
+
+                         {% endfor %}
+                    </tr>
+            </tbody>
+        </table>
+        </div>
+
+    <table class="table table-striped" id="ads" style='text-align:center;'>
+
+        <thead>
+            <tr>
+                <th>Article Image</th>
+                <th>Article Information</th>
+            </tr>
+        </thead>
+        <tbody>
+{% set existingIds = [] %}
+            <tr>{% for images in ads.images %}
+
+                    {% if images.id not in existingIds %}
+                <td><img src="{{ '/uploads/' ~ images.nameimage}}" alt=""
+                style="max-width: 100%;max-height: 100%;display: block;"></td>
+                 {% endif %}
+                {% endfor %}
+                <td>Title : {{ ads.title }}
+                <hr> Information : {{ ads.description }} <hr>
+                Category : {{ ads.category  }} <hr>
+                Date created : {{ ads.createdAt | date("d/m/y") }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container py-5">
+            <div class="container">
+            <div class="card border-secondary mb-3" id="tableregistration">
+                <div class="card-header" id="tablenoposts">
+                    <h1>{{ ads.title }}</h1>
+                </div>
+                <div class="d-flex justify-content-center">
+
+
+                    <p>{{ ads.description }}</p>
+                    <p>{{ ads.status  }}</p>
+                    <p>{{ ads.year  }}</p>
+                    <p>{{ ads.manufacturer  }}</p>
+                    <p>{{ ads.model  }}</p>
+                    <p>{{ ads.category  }}</p>
+                    <p>{{ ads.kilometres  }}</p>
+                    <p>{{ ads.cylender  }}</p>
+                    <p>{{ ads.transmission  }}</p>
+                    <p>{{ ads.drivertrain  }}</p>
+                    <p>{{ ads.outcolour  }}</p>
+                    <p>{{ ads.incolour  }}</p>
+                    <p>{{ ads.passengers  }}</p>
+                    <p>{{ ads.doors  }}</p>
+                    <p>{{ ads.fueltype  }}</p>
+                    <p>{{ ads.fueltank  }}</p>
+                    <p>{{ ads.oldprice  }}</p>
+                    <p>{{ ads.features  }}</p>
+                    <p>{{ ads.otherparams  }}</p>
+                    <p>{{ ads.safety  }}</p>
+                    <p>{{ ads.comfort  }}</p>
+
+                    <p>{{ ads.createdAt | date("d/m/y") }}</p>
+                    {% for images in ads.images %}
+                    <img src="{{ '/uploads/' ~ ads.id}}" alt="" style="max-width: 100%;max-height: 100%;display: block;">
+                    {% endfor %}
+                    </hr>
+                    </div>
+                </div>
+           </div>
+
+    {% else %}
+    <p>No ads to display</p>{% endif %}
+
+    <a href="/">GO BACK</a>
+    <a name="gback" id="" class="btn btn-primary" href="/" role="button">GO BACK</a>
+</div>
+
+{% endblock %}

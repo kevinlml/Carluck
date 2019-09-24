@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-sm navbar-dark nav-visit">
+    <div class="collapse navbar-collapse nav-position" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link text-info" href="/visitor">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            {% if app.user is null %}
+            <li class="nav-item">
+                <a class="nav-link text-info" href="/register"><i class="py-0 fa fa-user-plus" aria-hidden="true"></i>Register here!</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-info" href="/login"> <i class="py-0 fa fa-user"></i> Login</a>
+            </li>
+            {% endif %}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li class="nav-item dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" id="dropdownId">
+                <i class="py-0 fa fa-user"></i>Welcome {{ app.user.username }}</a>
+                <div aria-labelledby="dropdownId" class="dropdown-menu">
+                    <a href="/logout" class="dropdown-item text-primary">
+                        <i class="py-0 px-0 fa fa-user-times" aria-hidden="true"></i>Log out
+                    </a>
+                    <a href="/user/{{app.user.username}}" class="dropdown-item text-primary">
+                        <i class="py-0 px-0 fa fa-folder-open" aria-hidden="true"></i>My posts
+                        </a>
+                    <a href="/user/new" class="dropdown-item text-primary">
+                        <i class="py-0 px-0 fa fa-plus" aria-hidden="true"></i>new post
+                    </a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <a href="/admin" class="dropdown-item text-primary">
+                        <i class="py-0 px-0 fa fa-fighter-jet" aria-hidden="true"></i>admin page
+                    </a>
+                    {% endif %}
+                </div>
+            </li>{% endif %}
+            <li class="nav-item text-info">
+                <a class="nav-link text-info" href="#">Contact</a>
+            </li>
+            <li class="nav-item dropdown text-info">
+                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" id="dropdownId">Promotions</a>
+                <div aria-labelledby="dropdownId" class="dropdown-menu">
+                    <a class="dropdown-item" href="#">cheaper</a>
+                    <a class="dropdown-item" href="#">biggest</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>

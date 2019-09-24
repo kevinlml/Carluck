@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Search by category!
+{% endblock %}
+
+{% block body %}
+    {% if ads %}
+        <div class="container">
+            <table class="table table-striped" id="ads" style='text-align:center;'>
+
+                <thead>
+                    <tr>
+                        <th>Article Image</th>
+                        <th>Article Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+        {% set existingIds = [] %}
+                    <tr>{% for ads in ads %}
+
+
+                        <td><img src="{{ '/uploads/' ~ ads.nameimage}}" alt=""
+                        style="max-width: 100%;max-height: 100%;display: block;"></td>
+
+
+                        <td>Title : {{ ads.title }}
+                        <hr> Information : {{ ads.description }} <hr>
+                        Category : {{ ads.category_id  }} <hr>
+                        Date created : {{ ads.created_at | date("d/m/y") }}<hr>
+                        price :
+                        {{ ads.price }}<hr>
+                        Old price :
+                        {{ ads.oldprice }}</td>
+
+
+                     {% endfor %}</tr>
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+    <div class="container py-5">
+        <div class="container">
+            <div class="card border-secondary mb-3" id="tableregistration">
+                <div class="card-header" id="tablenoposts">Opps there was an error!
+                </div>
+                <div class="d-flex justify-content-center">
+
+
+                    <h1>
+                        <p>None Posts to display</p>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+{% endblock %}

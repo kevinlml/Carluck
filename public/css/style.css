@@ -1,0 +1,194 @@
+#tableregistration
+{
+max-width: 50rem;
+width:70%;
+margin-left:15%;
+margin-right:15%;
+border: 2px solid #2780E3;
+border-color: #2780E3;
+border-radius: 20px ;
+}
+
+.carousel-inner>.item {
+    height: 400px;
+}
+#cardHeaderRegistration{
+text-align: center;
+background-color: black;
+color:#2780E3;
+font-weight: 700;
+border-top-left-radius: 17px;
+border-top-right-radius: 17px;
+}
+
+#tablenoposts{
+    text-align: center;
+    background-color: red;
+    color: yellow;
+    font-size: xx-large;
+    font-weight: 700;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+}
+.btn-success
+{
+    border-radius: 10px;
+    font-weight: bold;
+}
+.img-responsive .navbar-brand
+{
+ border: 1px solid #ddd;
+ border-radius: 4px;
+ padding: 5px;
+ width: 150px;
+
+}
+
+ul.nav a:hover {
+    color: #fff !important;
+}
+
+#rowInitbarVisitor
+{
+    background: white;
+    border-radius: 10px, black;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+
+}
+
+.navbar-brand
+{
+    font-family: cursive;
+}
+
+.navbar-navbar>.nav-item>.nav-link>a {
+
+    color: #d7e2e9;
+
+}
+
+.carousel-inner>.carousel-item active>a>img,
+.carousel-inner>.carousel-item>a>img {
+   width:840px;
+   height:360px;
+}
+
+
+#categoryImgVisitor
+{
+background-image: url("/uploads/convertible.jpg");
+}
+#categoryImgVisitorcoupe {
+    background-image: url("/uploads/coupe.jpg");
+}
+#categoryImgVisitorelectric
+{
+    background-image: url("/uploads/electric.jpg");
+}
+#categoryImgVisitorhatchback {
+    background-image: url("/uploads/hatchback.jpg");
+}
+#categoryImgVisitorminivan {
+    background-image: url("/uploads/minivan.jpg");
+}
+#categoryImgVisitorSedan {
+    background-image: url("/uploads/Sedan.jpg");
+}
+#categoryImgVisitorSuv {
+    background-image: url("/uploads/Suv.jpg");
+}
+#categoryImgVisitorTruck {
+    background-image: url("/uploads/Truck.jpg");
+}
+.img-content {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 40vh;
+    background-image: url("~/uploads/convertible.jpg");
+}
+#nextCrsl:after {
+    content: '>';
+    font-size: 55px;
+    color: blue;
+}
+#prevCrsl:after {
+    content: '<';
+    font-size: 55px;
+    color: blue;
+}
+
+#SearchIndex,
+#SearchIndex2{
+    background-color: black;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+.fa-instagram {
+    background: silver;
+    color: white;
+
+}
+
+.fa-money{
+    color: green;
+}
+.fa-phone {
+    color: blue;
+}
+.fa-shopping-cart {
+    color: red;
+}
+#img-car-1{
+    height:700px
+}
+.container-text{
+    max-width: 900px;
+    width: 100%;
+    margin: 100px auto;
+    padding: 15px;
+}
+.nav-visit{
+    background-color: black;
+}
+.nav-visit li{
+    font-size: 20px;
+    font-weight: 500;
+    padding-right: 30px;
+}
+.nav-position{
+    margin: 0 50px;
+}
+
